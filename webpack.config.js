@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var outputPath = path.resolve(__dirname, 'output');
 
@@ -18,6 +19,14 @@ module.exports = {
                     "eslint-loader"
                 ],
                 exclude: /(node_modules|bower_components)/
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract(
+                    "style",
+                    "css",
+                    "sass"
+                )
             }
         ]
     },
@@ -25,6 +34,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'The Russian Peasant Calculator',
             hash: true
-        })
+        }),
+        new ExtractTextPlugin("[name].css")
     ]
 };
