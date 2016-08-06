@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jasmine",
     "lint": "eslint ./**/*.js",
-    "compile": "webpack --progress --colors",
+    "compile": "NODE_ENV=production webpack --progress --colors",
     "dev": "webpack-dev-server --progress --colors --inline"
   },
   "author": "Charles Korn",

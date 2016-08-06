@@ -1,3 +1,4 @@
+var webpack = require("webpack");
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -6,6 +7,7 @@ var outputPath = path.resolve(__dirname, 'output');
 
 module.exports = {
     entry: "./app/js/app.js",
+    devtool: 'source-map',
     output: {
         path: outputPath,
         filename: "bundle.js"
@@ -35,6 +37,10 @@ module.exports = {
             title: 'The Russian Peasant Calculator',
             hash: true
         }),
-        new ExtractTextPlugin("[name].css")
+        new ExtractTextPlugin("[name].css"),
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            compress: { warnings: false }
+        })
     ]
 };
