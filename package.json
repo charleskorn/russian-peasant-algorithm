@@ -7,7 +7,7 @@
     "test": "jasmine",
     "lint": "eslint ./app/**/*.js ./spec/**/*.js",
     "dev": "webpack-dev-server --progress --colors --inline",
-    "run": "static output --port $PORT",
+    "run": "static output --port $PORT --host-address 0.0.0.0",
     "heroku-postbuild": "NODE_ENV=production webpack --progress --colors"
   },
   "author": "Charles Korn",
