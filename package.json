@@ -7,7 +7,9 @@
     "test": "jasmine",
     "lint": "eslint ./app/**/*.js ./spec/**/*.js",
     "compile": "NODE_ENV=production webpack --progress --colors",
-    "dev": "webpack-dev-server --progress --colors --inline"
+    "dev": "webpack-dev-server --progress --colors --inline",
+    "run": "static output --port $PORT",
+    "heroku-postinstall": "compile"
   },
   "author": "Charles Korn",
   "license": "MIT",
@@ -35,5 +37,8 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "node-static": "^0.7.8"
   }
 }
