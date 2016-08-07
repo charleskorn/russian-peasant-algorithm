@@ -2,6 +2,10 @@ require("babel-polyfill");
 
 class Calculator {
     calculate(left, right) {
+        if (left < 0 || right < 0) {
+            throw new Error("Cannot perform calculation with negative numbers.");
+        }
+
         if (left === 0 || right === 0) {
             return this.zeroResult(left, right);
         }

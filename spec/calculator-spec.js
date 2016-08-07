@@ -50,6 +50,18 @@ describe("A Russian peasant calculator", () => {
             {left: 1, right: 1904, included: true}
         );
 
+    describe(`when the left number is negative`, () => {
+        it("throws an exception", () => {
+            expect(() => calculator.calculate(-1, 20)).toThrowError("Cannot perform calculation with negative numbers.");
+        });
+    });
+
+    describe(`when the right number is negative`, () => {
+        it("throws an exception", () => {
+            expect(() => calculator.calculate(20, -1)).toThrowError("Cannot perform calculation with negative numbers.");
+        });
+    });
+
     function expectMultiplication(left, right) {
         return new CalculatorSpecHelper(calculator, left, right);
     }

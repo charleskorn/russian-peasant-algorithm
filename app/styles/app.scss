@@ -1,9 +1,80 @@
-@import 'https://fonts.googleapis.com/css?family=Permanent+Marker|Ubuntu';
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Ubuntu');
+
+$input-size: 20pt;
+$input-font: Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$grey: #aaaaaa;
+$light-grey: lighten($grey, 20%);
+$result-padding: 15px;
+$number-width: 40%;
 
 html {
-  font-family: Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $input-font;
 }
 
-.number {
-  font-family: "Permanent Marker", cursive;
+.inputContainer {
+  font-size: $input-size;
+  text-align: center;
+
+  input {
+    width: $number-width;
+    outline: none;
+    border: none;
+    border-bottom: solid 1pt $grey;
+    font-family: $input-font;
+    font-size: $input-size;
+
+    &.right {
+      text-align: left;
+    }
+
+    &.left {
+      text-align: right;
+    }
+
+    // Remove the up and down buttons.
+    &[type=number]::-webkit-inner-spin-button,
+    &[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  .multiplication-sign {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.results {
+  font-size: 20pt;
+  font-family: "Architects Daughter", cursive;
+  width: 100%;
+
+  .result-item {
+    .left, .right {
+      box-sizing: border-box;
+      width: 50%;
+      display: inline-block;
+      padding: 0 $result-padding;
+      color: $grey;
+    }
+
+    .left {
+      text-align: right;
+    }
+
+    &.excluded {
+      .left, .right {
+        text-decoration: line-through;
+        color: $light-grey;
+      }
+    }
+  }
+
+  .total {
+    margin-left: 50%;
+    padding-left: $result-padding;
+    border-top: solid $grey 1px;
+    width: $number-width;
+  }
 }
