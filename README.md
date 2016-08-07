@@ -23,10 +23,11 @@ Access a deployed version of the app at [https://russian-peasant-algorithm.herok
 
 # Notes
 
-* No testing for the UI because I like to live on the edge.
+* No testing for the UI because I like to live on the edge. There are unit tests for the calculation itself though.
 * Supports [the Redux devtools extension for Chrome and Firefox](https://github.com/zalmoxisus/redux-devtools-extension).
 * 100% 2016 JavaScript buzzword list compliant: uses ES6, Webpack, Babel, ESLint, React, Redux and Jasmine.
 * Has only been tested in Chrome 51, may break horribly / behave strangely / delete all your stuff in other browsers.
+* HTTPS access, because the security of your multiplications is important to us.
  
 # Prerequisites
 
