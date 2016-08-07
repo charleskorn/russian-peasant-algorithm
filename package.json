@@ -2,7 +2,7 @@
   "name": "russian-peasant-algorithm",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "repository": "https://github.com/charleskorn/russian-peasant-algorithm",
   "scripts": {
     "test": "jasmine",
     "lint": "eslint ./app/**/*.js ./spec/**/*.js",
